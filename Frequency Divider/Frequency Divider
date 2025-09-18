@@ -1,3 +1,3 @@
 This Folder contains the design codes of positive edge trigerred data flip flop, 
 negative edge trigerred data flop flop and frequency divider by 1.5 with 33.33% circuit. 
-It also contains the testbench file of the frequency divider circuit
+It also contains the testbench code of the frequency divider circuit
