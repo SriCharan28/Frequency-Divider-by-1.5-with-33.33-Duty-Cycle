@@ -9,17 +9,27 @@ input wire rst;
 output wire out;
 
 wire t1,t2;
-wire qp0,qp1,qp2;
+wire [2:0] q;
 wire qn1;
 
-//Ring Counter
+//wire qp0,qp1,qp2;
+
+///*
+ring_counter cnt0(clk,rst,q);
+dffn dn0(clk,rst,q[1],qn1);
+and a0(t1,clk,q[0]);
+and a1(t2,~clk,qn1);
+or o0(out,t1,t2);
+//*/
+
+/*
 dffp dp0(clk,rst,1'd0,qp2,qp0);
 dffp dp1(clk,1'd0,rst,qp0,qp1);
 dffp dp2(clk,1'd0,rst,qp1,qp2);
-
 dffn dn0(clk,rst,qp1,qn1);
 and a0(t1,clk,qp0);
 and a1(t2,~clk,qn1);
 or o0(out,t1,t2);
-  
+*/
+
 endmodule
